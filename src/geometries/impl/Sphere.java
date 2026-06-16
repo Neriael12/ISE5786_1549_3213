@@ -38,6 +38,6 @@ public class Sphere extends RadialGeometry {
 
 	@Override
 	public String toString() {
-		return "Sphere: center=" + _center + ", radius=" + radius;
+		return "Sphere: center=" + _center + ", radius=" + _radius;
 	}
 }

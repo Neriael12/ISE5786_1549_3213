@@ -30,10 +30,7 @@ public class Vector extends Point {
 	 * @param z the z coordinate
 	 */
 	public Vector(double x, double y, double z) {
-		super(x, y, z);
-		if (_xyz.equals(Double3.ZERO)) {
-			throw new IllegalArgumentException("Vector(0,0,0) is not allowed");
-		}
+		this(new Double3(x, y, z));
 	}
 
 	/**
@@ -42,10 +39,9 @@ public class Vector extends Point {
 	 * coordinates of the vector
 	 */
 	public Vector(Double3 xyz) {
-		super(xyz);
-		if (_xyz.equals(Double3.ZERO)) {
+		if (xyz.equals(Double3.ZERO))
 			throw new IllegalArgumentException("Vector(0,0,0) is not allowed");
-		}
+		super(xyz);
 	}
 
 	/**

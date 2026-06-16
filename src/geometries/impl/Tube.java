@@ -49,6 +49,6 @@ public class Tube extends RadialGeometry {
 
 	@Override
 	public String toString() {
-		return "Tube: axis=" + _axis + ", radius=" + radius;
+		return "Tube: axis=" + _axis + ", radius=" + _radius;
 	}
 }

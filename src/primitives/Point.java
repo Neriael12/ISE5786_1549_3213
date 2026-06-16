@@ -11,7 +11,7 @@ public class Point {
 	protected final Double3 _xyz;
 
 	/**
-	 * The origin point (0,0,0).
+	 * test test The origin point (0,0,0).
 	 */
 	public static final Point ZERO = new Point(0, 0, 0);
 
