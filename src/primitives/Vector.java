@@ -29,8 +29,11 @@ public class Vector extends Point {
 	 * @param y the y coordinate
 	 * @param z the z coordinate
 	 */
-	public Vector(double x, double y, double z) {
-		this(new Double3(x, y, z));
+	public Vector(double x, double y, double z)
+	{
+		if (Util.isZero(x)&& Util.isZero(y) && Util.isZero(z))
+			throw new IllegalArgumentException("Vector(0,0,0) is not allowed");
+		super(x,y,z);
 	}
 
 	/**
@@ -104,8 +107,10 @@ public class Vector extends Point {
 	 * Returns a normalized version of this vector (length = 1). * @return a new
 	 * normalized Vector
 	 */
-	public Vector normalize() {
-		return scale(1d / length());
+	public Vector normalize()
+	{
+		double length	 = length();
+		return new Vector(this._xyz._d1()/length,this._xyz._d2()/length, this._xyz._d3()/length) ;
 	}
 
 	@Override

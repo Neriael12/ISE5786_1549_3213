@@ -33,7 +33,7 @@ public class Sphere extends RadialGeometry {
 	@Override
 	public Vector getNormal(Point point) {
 		// Normal to a sphere at point P is (P - O).normalize()
-		return point.subtract(_center).normalize();
+		return null;
 	}
 
 	@Override
