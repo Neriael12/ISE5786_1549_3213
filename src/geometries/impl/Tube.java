@@ -1,5 +1,7 @@
 package geometries.impl;
 
+import static primitives.Util.isZero;
+
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
@@ -35,16 +37,15 @@ public class Tube extends RadialGeometry {
 		return _axis;
 	}
 
-	/**
-	 * Calculates the normal to the tube at a given point on its surface. In step 1,
-	 * this method returns null.
-	 * 
-	 * @param point the point on the tube's surface
-	 * @return null (to be implemented in later stages)
-	 */
 	@Override
 	public Vector getNormal(Point point) {
-		return null; // Will be implemented in the next stage
+		Point p0 = _axis.origin();
+		Vector v = _axis.direction();
+
+		double t = point.subtract(p0).dotProduct(v);
+		Point o = isZero(t) ? p0 : p0.add(v.scale(t));
+
+		return point.subtract(o).normalize();
 	}
 
 	@Override

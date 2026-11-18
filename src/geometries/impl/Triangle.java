@@ -10,8 +10,9 @@ public class Triangle extends Polygon {
 
 	/**
 	 * Constructor that takes 3 vertices to create a triangle. Calls the superclass
-	 * Polygon constructor. * @param p1 first vertex
+	 * Polygon constructor.
 	 * 
+	 * @param p1 first vertex
 	 * @param p2 second vertex
 	 * @param p3 third vertex
 	 */

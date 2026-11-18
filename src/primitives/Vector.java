@@ -23,23 +23,23 @@ public class Vector extends Point {
 
 	/**
 	 * Constructor to initialize Vector based on three double values. Throws
-	 * IllegalArgumentException if the vector is a zero vector. * @param x the x
-	 * coordinate
+	 * IllegalArgumentException if the vector is a zero vector.
 	 * 
+	 * @param x the x coordinate
 	 * @param y the y coordinate
 	 * @param z the z coordinate
 	 */
-	public Vector(double x, double y, double z)
-	{
-		if (Util.isZero(x)&& Util.isZero(y) && Util.isZero(z))
+	public Vector(double x, double y, double z) {
+		if (Util.isZero(x) && Util.isZero(y) && Util.isZero(z))
 			throw new IllegalArgumentException("Vector(0,0,0) is not allowed");
-		super(x,y,z);
+		super(x, y, z);
 	}
 
 	/**
 	 * Constructor to initialize Vector based on Double3 object. Throws
-	 * IllegalArgumentException if the vector is a zero vector. * @param xyz
-	 * coordinates of the vector
+	 * IllegalArgumentException if the vector is a zero vector.
+	 * 
+	 * @param xyz coordinates of the vector
 	 */
 	public Vector(Double3 xyz) {
 		if (xyz.equals(Double3.ZERO))
@@ -48,8 +48,9 @@ public class Vector extends Point {
 	}
 
 	/**
-	 * Adds another vector to this vector. * @param vector the vector to add
+	 * Adds another vector to this vector.
 	 * 
+	 * @param vector the vector to add
 	 * @return a new Vector representing the sum
 	 */
 	public Vector add(Vector vector) {
@@ -57,8 +58,9 @@ public class Vector extends Point {
 	}
 
 	/**
-	 * Multiplies the vector by a scalar. * @param scalar the scalar value
+	 * Multiplies the vector by a scalar.
 	 * 
+	 * @param scalar the scalar value
 	 * @return a new Vector representing the scaled vector
 	 */
 	public Vector scale(double scalar) {
@@ -90,27 +92,31 @@ public class Vector extends Point {
 	}
 
 	/**
-	 * Calculates the squared length of the vector. * @return the squared length
+	 * Calculates the squared length of the vector.
+	 * 
+	 * @return the squared length
 	 */
 	public double lengthSquared() {
 		return dotProduct(this);
 	}
 
 	/**
-	 * Calculates the length of the vector. * @return the magnitude (length)
+	 * Calculates the length of the vector.
+	 * 
+	 * @return the magnitude (length)
 	 */
 	public double length() {
 		return Math.sqrt(lengthSquared());
 	}
 
 	/**
-	 * Returns a normalized version of this vector (length = 1). * @return a new
-	 * normalized Vector
+	 * Returns a normalized version of this vector (length = 1).
+	 * 
+	 * @return a new normalized Vector
 	 */
-	public Vector normalize()
-	{
-		double length	 = length();
-		return new Vector(this._xyz._d1()/length,this._xyz._d2()/length, this._xyz._d3()/length) ;
+	public Vector normalize() {
+		double length = length();
+		return new Vector(this._xyz._d1() / length, this._xyz._d2() / length, this._xyz._d3() / length);
 	}
 
 	@Override

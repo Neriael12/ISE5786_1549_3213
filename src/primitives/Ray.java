@@ -17,9 +17,9 @@ public class Ray {
 
 	/**
 	 * Constructor to initialize a ray with an origin point and a direction vector.
-	 * The direction vector is normalized automatically. * @param origin the
-	 * starting point of the ray
+	 * The direction vector is normalized automatically.
 	 * 
+	 * @param origin    the starting point of the ray
 	 * @param direction the direction of the ray
 	 */
 	public Ray(Point origin, Vector direction) {
@@ -28,15 +28,18 @@ public class Ray {
 	}
 
 	/**
-	 * Getter for the origin point of the ray. * @return the origin point
+	 * Getter for the origin point of the ray.
+	 * 
+	 * @return the origin point
 	 */
 	public Point origin() {
 		return _origin;
 	}
 
 	/**
-	 * Getter for the direction vector of the ray. * @return the normalized
-	 * direction vector
+	 * Getter for the direction vector of the ray.
+	 * 
+	 * @return the normalized direction vector
 	 */
 	public Vector direction() {
 		return _direction;

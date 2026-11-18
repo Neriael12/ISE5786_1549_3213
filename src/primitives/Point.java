@@ -1,23 +1,24 @@
 package primitives;
 
 /**
- * This class represents a 3D point in space. It serves as the base class for
- * Vector.
+ * Class representing a point in 3D space.
  */
 public class Point {
+
 	/**
-	 * The coordinates of the point.
+	 * Coordinates of the point.
 	 */
 	protected final Double3 _xyz;
 
 	/**
-	 *  The origin point (0,0,0).
+	 * Constant representing the origin point (0,0,0).
 	 */
 	public static final Point ZERO = new Point(0, 0, 0);
 
 	/**
-	 * Constructor that takes three double values. * @param x the x coordinate
+	 * Constructor that takes three double values.
 	 * 
+	 * @param x the x coordinate
 	 * @param y the y coordinate
 	 * @param z the z coordinate
 	 */
@@ -26,17 +27,18 @@ public class Point {
 	}
 
 	/**
-	 * Constructor that takes a Double3 object. * @param xyz the Double3 object
-	 * containing the coordinates
+	 * Constructor that takes a Double3 object.
+	 * 
+	 * @param xyz the Double3 object containing the coordinates
 	 */
 	public Point(Double3 xyz) {
 		this._xyz = xyz;
 	}
 
 	/**
-	 * Subtracts a point from this point to create a vector. * @param other the
-	 * point to subtract from this point
+	 * Subtracts a point from this point to create a vector.
 	 * 
+	 * @param other the point to subtract from this point
 	 * @return a new Vector from the other point to this point
 	 */
 	public Vector subtract(Point other) {
@@ -44,8 +46,9 @@ public class Point {
 	}
 
 	/**
-	 * Adds a vector to this point. * @param vector the vector to add
+	 * Adds a vector to this point.
 	 * 
+	 * @param vector the vector to add
 	 * @return a new Point after the addition
 	 */
 	public Point add(Vector vector) {
@@ -67,9 +70,9 @@ public class Point {
 	}
 
 	/**
-	 * Calculates the distance between this point and another point. * @param other
-	 * the other point
+	 * Calculates the distance between this point and another point.
 	 * 
+	 * @param other the other point
 	 * @return the distance
 	 */
 	public double distance(Point other) {

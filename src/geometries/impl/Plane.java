@@ -20,21 +20,24 @@ public class Plane extends Geometry {
 	private final Vector _normal;
 
 	/**
-	 * Constructor that takes 3 points on the plane. Note: In step 1, the normal is
-	 * not calculated and is initialized to null. * @param p1 first point
+	 * Constructor that takes 3 points on the plane and calculates the normal.
 	 * 
+	 * @param p1 first point
 	 * @param p2 second point
 	 * @param p3 third point
 	 */
 	public Plane(Point p1, Point p2, Point p3) {
 		_point = p1;
-		_normal = null; // Will be implemented in the next stage
+		Vector v1 = p2.subtract(p1);
+		Vector v2 = p3.subtract(p1);
+		_normal = v1.crossProduct(v2).normalize();
 	}
 
 	/**
 	 * Constructor that takes a point and a normal vector. The vector is normalized
-	 * upon creation. * @param point a reference point on the plane
+	 * upon creation.
 	 * 
+	 * @param point  a reference point on the plane
 	 * @param normal the normal vector to the plane
 	 */
 	public Plane(Point point, Vector normal) {
