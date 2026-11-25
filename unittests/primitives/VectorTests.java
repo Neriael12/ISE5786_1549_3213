@@ -1,7 +1,11 @@
 package primitives;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Unit tests for class {@link Vector}.
@@ -20,25 +24,39 @@ import org.junit.jupiter.api.Test;
  */
 class VectorTests {
 
-    /** Constant delta value for accuracy when comparing double values */
+    /**
+     * Constant delta value for accuracy when comparing double values
+     */
     private static final double DELTA = 1e-6;
 
-    /** Vector (1, 2, 3) used in vector tests */
+    /**
+     * Vector (1, 2, 3) used in vector tests
+     */
     private static final Vector V1 = new Vector(1, 2, 3);
 
-    /** Vector (2, 4, 6) used in vector tests */
+    /**
+     * Vector (2, 4, 6) used in vector tests
+     */
     private static final Vector V2 = new Vector(2, 4, 6);
 
-    /** Vector (0, 3, -2) orthogonal to V1 */
+    /**
+     * Vector (0, 3, -2) orthogonal to V1
+     */
     private static final Vector V3 = new Vector(0, 3, -2);
 
-    /** Error message when a valid action throws an unexpected exception */
+    /**
+     * Error message when a valid action throws an unexpected exception
+     */
     private static final String ERROR_EXCEPTION_THROWN = "ERROR: Exception thrown unexpectedly";
 
-    /** Error message when constructor fails to throw on zero vector */
+    /**
+     * Error message when constructor fails to throw on zero vector
+     */
     private static final String ERROR_ZERO_VECTOR = "ERROR: Zero vector construction did not throw exception";
 
-    /** Error message for incorrect calculation results */
+    /**
+     * Error message for incorrect calculation results
+     */
     private static final String ERROR_WRONG_RESULT = "ERROR: Method calculated wrong result";
 
     /**
@@ -54,9 +72,9 @@ class VectorTests {
         // BV02: Constructor with Double3 object resulting in zero vector
         assertThrows(IllegalArgumentException.class, () -> new Vector(Double3.ZERO), ERROR_ZERO_VECTOR);
 
-        assertDoesNotThrow(() -> new Vector(1, 2,3 ), "constracting not work");
+        assertDoesNotThrow(() -> new Vector(1, 2, 3), "constracting not work");
 
-        assertDoesNotThrow(() -> new Vector( new Double3(1,2,1) ), "constracting not work");
+        assertDoesNotThrow(() -> new Vector(new Double3(1, 2, 1)), "constracting not work");
     }
 
     /**
@@ -197,12 +215,10 @@ class VectorTests {
 
         // =============== Boundary Values Tests ==================
 
-
         Vector negetive = new Vector(-3, -4, 0);
         double result1 = negetive.length();
         assertEquals(5d, result1, DELTA, ERROR_WRONG_RESULT);
     }
-
 
     /**
      * Test method for {@link Vector#normalize()}.

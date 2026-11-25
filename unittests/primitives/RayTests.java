@@ -1,8 +1,9 @@
 package primitives;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit tests for class {@link Ray}.
@@ -13,22 +14,34 @@ import org.junit.jupiter.api.Test;
  */
 class RayTests {
 
-    /** Constant delta value for accuracy when comparing double values */
+    /**
+     * Constant delta value for accuracy when comparing double values
+     */
     private static final double DELTA = 1e-6;
 
-    /** Point (1, 2, 3) used in ray tests */
+    /**
+     * Point (1, 2, 3) used in ray tests
+     */
     private static final Point P0 = new Point(1, 2, 3);
 
-    /** Error message when a valid action throws an unexpected exception */
+    /**
+     * Error message when a valid action throws an unexpected exception
+     */
     private static final String ERROR_EXCEPTION_THROWN = "ERROR: Exception thrown unexpectedly";
 
-    /** Error message for non-normalized ray direction */
+    /**
+     * Error message for non-normalized ray direction
+     */
     private static final String ERROR_NOT_NORMALIZED = "ERROR: Ray direction is not normalized";
 
-    /** Error message for wrong ray origin */
+    /**
+     * Error message for wrong ray origin
+     */
     private static final String ERROR_WRONG_ORIGIN = "ERROR: Ray origin is incorrect";
 
-    /** Error message for wrong ray direction */
+    /**
+     * Error message for wrong ray direction
+     */
     private static final String ERROR_WRONG_DIRECTION = "ERROR: Ray direction is incorrect";
 
     /**

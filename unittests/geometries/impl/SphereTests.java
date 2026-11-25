@@ -1,8 +1,11 @@
 package geometries.impl;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import primitives.*;
+import primitives.Point;
+import primitives.Vector;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit tests for class {@link Sphere}.
@@ -13,13 +16,19 @@ import primitives.*;
  */
 class SphereTests {
 
-    /** Constant delta value for accuracy when comparing double values */
+    /**
+     * Constant delta value for accuracy when comparing double values
+     */
     private static final double DELTA = 1e-6;
 
-    /** Error message for incorrect normal value */
+    /**
+     * Error message for incorrect normal value
+     */
     private static final String ERROR_WRONG_NORMAL = "ERROR: getNormal() returned a wrong vector";
 
-    /** Error message when a valid action throws an unexpected exception */
+    /**
+     * Error message when a valid action throws an unexpected exception
+     */
     private static final String ERROR_EXCEPTION_THROWN = "ERROR: Exception thrown unexpectedly";
 
     /**

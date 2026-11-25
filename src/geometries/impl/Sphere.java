@@ -8,29 +8,29 @@ import primitives.Vector;
  * implements the normal calculation.
  */
 public class Sphere extends RadialGeometry {
-	/**
-	 * The center point of the sphere.
-	 */
-	private final Point _center;
+    /**
+     * The center point of the sphere.
+     */
+    private final Point _center;
 
-	/**
-	 * Constructor that initializes a sphere with a center point and a radius.
-	 * 
-	 * @param center the center point of the sphere
-	 * @param radius the radius of the sphere
-	 */
-	public Sphere(Point center, double radius) {
-		super(radius);
-		this._center = center;
-	}
+    /**
+     * Constructor that initializes a sphere with a center point and a radius.
+     *
+     * @param center the center point of the sphere
+     * @param radius the radius of the sphere
+     */
+    public Sphere(Point center, double radius) {
+        super(radius);
+        this._center = center;
+    }
 
-	@Override
-	public Vector getNormal(Point point) {
-		return point.subtract(_center).normalize();
-	}
+    @Override
+    public Vector getNormal(Point point) {
+        return point.subtract(_center).normalize();
+    }
 
-	@Override
-	public String toString() {
-		return "Sphere: center=" + _center + ", radius=" + _radius;
-	}
+    @Override
+    public String toString() {
+        return "Sphere: center=" + _center + ", radius=" + _radius;
+    }
 }

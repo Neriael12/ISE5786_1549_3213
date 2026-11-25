@@ -1,8 +1,12 @@
 package geometries.impl;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import primitives.*;
+import primitives.Point;
+import primitives.Vector;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit tests for class {@link Plane}.
@@ -14,20 +18,35 @@ import primitives.*;
  * </ul>
  */
 class PlaneTests {
+    /**
+     * Default constructor for documentation tools
+     */
+    public PlaneTests() {
+    }
 
-    /** Constant delta value for accuracy when comparing double values */
+    /**
+     * Constant delta value for accuracy when comparing double values
+     */
     private static final double DELTA = 1e-6;
 
-    /** Error message for non-normalized vector */
+    /**
+     * Error message for non-normalized vector
+     */
     private static final String ERROR_NOT_NORMALIZED = "ERROR: Normal vector is not a unit vector";
 
-    /** Error message for incorrect orthogonal calculation */
+    /**
+     * Error message for incorrect orthogonal calculation
+     */
     private static final String ERROR_NOT_ORTHOGONAL = "ERROR: Normal is not orthogonal to the plane";
 
-    /** Error message when a constructor doesn't throw on invalid points */
+    /**
+     * Error message when a constructor doesn't throw on invalid points
+     */
     private static final String ERROR_CONSTRUCTOR_FAIL = "ERROR: Constructor failed to throw exception for invalid points";
 
-    /** Error message when a valid action throws an unexpected exception */
+    /**
+     * Error message when a valid action throws an unexpected exception
+     */
     private static final String ERROR_EXCEPTION_THROWN = "ERROR: Exception thrown unexpectedly";
 
     /**

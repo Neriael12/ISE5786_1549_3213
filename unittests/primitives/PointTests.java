@@ -1,7 +1,10 @@
 package primitives;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit tests for class {@link Point}.
@@ -15,31 +18,49 @@ import org.junit.jupiter.api.Test;
  */
 class PointTests {
 
-    /** Constant delta value for accuracy when comparing double values */
+    /**
+     * Constant delta value for accuracy when comparing double values
+     */
     private static final double DELTA = 1e-6;
 
-    /** Point (1, 2, 3) used in point tests */
+    /**
+     * Point (1, 2, 3) used in point tests
+     */
     private static final Point P1 = new Point(1, 2, 3);
 
-    /** Point (2, 4, 6) used in point tests */
+    /**
+     * Point (2, 4, 6) used in point tests
+     */
     private static final Point P2 = new Point(2, 4, 6);
 
-    /** Vector (1, 2, 3) used in point tests */
+    /**
+     * Vector (1, 2, 3) used in point tests
+     */
     private static final Vector V1 = new Vector(1, 2, 3);
 
-    /** Error message when a valid action throws an unexpected exception */
+    /**
+     * Error message when a valid action throws an unexpected exception
+     */
     private static final String ERROR_EXCEPTION_THROWN = "ERROR: Exception thrown unexpectedly";
 
-    /** Error message for incorrect addition result */
+    /**
+     * Error message for incorrect addition result
+     */
     private static final String ERROR_ADD = "ERROR: Point + Vector does not work correctly";
 
-    /** Error message for incorrect subtraction result */
+    /**
+     * Error message for incorrect subtraction result
+     */
     private static final String ERROR_SUBTRACT = "ERROR: Point - Point does not work correctly";
 
-    /** Error message for incorrect squared distance result */
+    /**
+     * Error message for incorrect squared distance result
+     */
     private static final String ERROR_DIST_SQUARED = "ERROR: distanceSquared() calculates incorrect value";
 
-    /** Error message for incorrect distance result */
+    /**
+     * Error message for incorrect distance result
+     */
     private static final String ERROR_DIST = "ERROR: distance() calculates incorrect value";
 
     /**
